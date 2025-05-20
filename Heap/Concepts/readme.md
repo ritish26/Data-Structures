@@ -1,21 +1,39 @@
-![alt text](image.png)
+/*
+ * Priority Queue (Heap) Behavior in C++
+ *
+ * By default, `priority_queue` in C++ is a **max-heap**, which means the element with the largest value 
+ * has the highest priority and is popped first.
+ *
+ * Syntax:
+ *     priority_queue<int> maxHeap; // Default max-heap
+ *
+ * To create a **min-heap**, use the `greater<int>` comparator:
+ *     priority_queue<int, vector<int>, greater<int>> minHeap;
+ *
+ * You can also use `priority_queue` with pairs:
+ *     priority_queue<pair<int, pair<int, int>>> maxHeapOfPairs;
+ *
+ * --------------------------
+ * Custom Comparator Example
+ * --------------------------
+ * When working with complex data structures like linked lists (e.g., merging k sorted linked lists),
+ * we often need a min-heap based on custom logic — such as comparing the values in ListNode objects.
+ *
+ * To achieve this, we define a custom comparator using a struct that overloads the `()` operator.
+ * The comparator below creates a **min-heap** for `ListNode*`, prioritizing nodes with smaller values.
+ */
 
-priority_queue<int> pq //bydefault it is max heap
-priority_queue<int, vector<int>, greater<int>> minHeap; // it gives min heap
-priority_queue<pair<int,pair<int,int>>> maxHeap // to store in pairs
-
-
-This comparator is used in a priority_queue (which is a heap in C++). By default, priority_queue in C++ is a max-heap — meaning it gives you the largest element first.
-It overrides the () operator to define how two ListNode* pointers should be compared.
-This means:
-	•	If a->val is greater than b->val, it returns true
-	•	And in a priority_queue, returning true means a goes after b in the heap
-
-So this forces the heap to prioritize smaller values first — making it behave like a min-heap.
 struct compare {
     bool operator()(ListNode* a, ListNode* b) {
-        return a->val > b->val;  // smallest value has higher priority
+        // Return true if 'a' has a greater value than 'b'
+        // This makes 'a' go below 'b' in the min-heap
+        return a->val > b->val;
     }
 };
 
-
+/*
+ * Why this works:
+ * - The priority queue uses the comparator to determine ordering.
+ * - If `a->val > b->val`, `a` is considered "larger" and goes after `b`.
+ * - As a result, nodes with **smaller values** rise to the top — i.e., min-heap behavior.
+ */
