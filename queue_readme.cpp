@@ -70,3 +70,7 @@ int main() {
 
     return 0;
 }
+
+atoi: Converts a C-style string (char*) to an int (unsafe, no error checking). //eg: const char *str = "123abc";
+stoi: Converts a C++ std::string to an int (safe, throws exceptions on error).
+to_string: Converts numeric values (like int, float) to a std::string in C++.
