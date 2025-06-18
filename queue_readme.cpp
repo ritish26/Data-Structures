@@ -74,3 +74,10 @@ int main() {
 atoi: Converts a C-style string (char*) to an int (unsafe, no error checking). //eg: const char *str = "123abc";
 stoi: Converts a C++ std::string to an int (safe, throws exceptions on error).
 to_string: Converts numeric values (like int, float) to a std::string in C++.
+
+// Create adjancay matrix in graph if given graph as vector<vector<int>> v
+ vector<vector<int>> adj(v);
+        for (auto& edge : edges) {
+            adj[edge[0]].push_back(edge[1]);
+            adj[edge[1]].push_back(edge[0]); // undirected
+        }
