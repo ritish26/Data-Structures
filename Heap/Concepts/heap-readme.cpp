@@ -37,3 +37,11 @@ struct compare {
  * - If `a->val > b->val`, `a` is considered "larger" and goes after `b`.
  * - As a result, nodes with **smaller values** rise to the top — i.e., min-heap behavior.
  */
+
+
+ /* 
+ 1. Insert  q.push(x)
+ 2. q.pop();  // Removes the largest element (top of heap)
+ 3. int maxElement = q.top();  // Gets the largest element
+ 4. int count = q.size(); //  Check Size 
+ */
