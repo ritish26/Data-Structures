@@ -27,7 +27,7 @@ void heapify(vector<int>& arr, int n, int i) {
 void heapSort(vector<int>& arr) {
     int n = arr.size();
 
-    // Step 1: Build max heap (heapify entire array from bottom up)
+    // Step 1: Build max heap (heapify entire array from bottom up) - from half array to top it will maintain the max heap property
     for (int i = n / 2 - 1; i >= 0; i--)
         heapify(arr, n, i);
 
