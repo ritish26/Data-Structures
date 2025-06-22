@@ -45,3 +45,7 @@ struct compare {
  3. int maxElement = q.top();  // Gets the largest element
  4. int count = q.size(); //  Check Size 
  */
+
+ /* 
+ * Use unordered map as the Access Time is O(1)
+ */

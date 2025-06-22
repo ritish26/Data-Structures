@@ -20,3 +20,6 @@ Format: first_case_occurance
 
 // pascal case
 Format: FirstCaseOccurance
+
+// Sort a vector in descending order:
+ sort(A.begin(),A.end(),greater<int>());
