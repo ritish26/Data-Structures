@@ -49,3 +49,11 @@ struct compare {
  /* 
  * Use unordered map as the Access Time is O(1)
  */
+
+ | Container | Method            | Example                     |
+|-----------|-------------------|-----------------------------|
+| set       | `s.erase(value)`  | `s.erase(5);`               |
+| set       | `s.erase(it)`     | `s.erase(s.find(5));`       |
+| map       | `m.erase(key)`    | `m.erase("apple");`         |
+| map       | `m.erase(it)`     | `m.erase(m.find("x"));`     |
+| any       | `erase(start, end)` | clears a range            |
